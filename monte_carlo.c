@@ -38,40 +38,18 @@ int main(void) {
     }
   }
 }
-float mc_pi(int n){
-  float x;
-  float y;
-  int i;
-  float z;
-  int square=0;
-  int circle=0;
-  float pi;
-  
-  for(i=1;i<=n;i++){
-   
-   x=frandom();
-   y=frandom();
-   z=x*x+y*y;
-  
-   
-   if(z<=1){
-     circle+=1;
-     square+=1;
-     }
-   else{
-     square+=1;
-     
-     
-   }
-   
-   }
- 
- pi=(float)4*circle/square;
- return pi;
-   
-    
-  
-  
+float mc_pi(int a){
+    float count=0;
+    for(int i=0;i<a;i++){
+        float x=frandom();
+        float y=frandom();
+        float d=sqrt(pow(x,2)+pow(y,2));
+        if(d<1){
+            count++;
+        }
+    }
+    float k = 4*count/a;
+    return k;
 }
 
 
